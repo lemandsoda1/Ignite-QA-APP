@@ -1,0 +1,22 @@
+{
+  "name": "live-qa",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Live Q&A for events: the audience scans a QR code and asks questions, the host sees them live.",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "test": "node --test test/*.test.js",
+    "stress": "node test/stress.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@upstash/redis": "^1.41.0",
+    "express": "^5.3.0",
+    "qrcode": "^1.5.4"
+  }
+}

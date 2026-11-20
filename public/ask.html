@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Ask a question</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/fonts/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/NoaGrotesk2.0-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/NoaSerif2.0-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container site-header-inner">
+      <img class="brand" src="/brand/noa-ignite-logo.svg" alt="NoA Ignite" width="111" height="24">
+      <span class="site-label">Live Q&amp;A · <span id="code" class="code-pill"></span></span>
+    </div>
+  </header>
+
+  <div class="container">
+    <h1 id="event-name" class="event-title">&nbsp;</h1>
+  </div>
+
+  <main id="main" class="container">
+    <p id="offline" class="banner" hidden>Connection lost. Reconnecting…</p>
+
+    <form id="ask" class="ask">
+      <label for="text" class="sr-only">Your question</label>
+      <textarea id="text" rows="3" maxlength="300" placeholder="Ask your question…" required></textarea>
+      <div class="ask-row">
+        <input id="author" type="text" maxlength="40" placeholder="Your name (optional)" autocomplete="name">
+      </div>
+      <button id="send" class="btn btn-primary btn-block">Send question</button>
+    </form>
+
+    <div class="tabs">
+      <span class="tab" aria-selected="true">Others asked</span>
+    </div>
+
+    <ul id="list" class="qlist"></ul>
+    <p id="empty" class="empty" hidden></p>
+    <div class="spacer"></div>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="/app.js"></script>
+  <script src="/ask.js"></script>
+</body>
+</html>

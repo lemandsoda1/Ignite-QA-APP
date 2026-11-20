@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Live Q&amp;A · Big screen</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/fonts/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/NoaGrotesk2.0-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/NoaSerif2.0-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/screen.css">
+</head>
+<body class="screen">
+  <main id="stage">
+    <header class="screen-head">
+      <img class="brand brand-pos" src="/brand/noa-ignite-logo.svg" alt="NoA Ignite">
+      <img class="brand brand-neg" src="/brand/noa-ignite-logo-neg.svg" alt="NoA Ignite">
+      <span class="site-label" id="s-event">Live Q&amp;A</span>
+    </header>
+
+    <section id="idle" class="idle">
+      <div class="idle-copy">
+        <h1>Ask your questions</h1>
+        <p class="steps">Scan the QR code<br>or go to <strong id="s-url"></strong></p>
+        <p class="idle-count" id="s-count"></p>
+      </div>
+      <img id="s-qr" class="idle-qr" alt="QR code to join the Q&amp;A">
+    </section>
+
+    <section id="question" class="question">
+      <blockquote id="q-text"></blockquote>
+      <p id="q-author" class="q-by"></p>
+    </section>
+
+    <footer class="bar">
+      <img id="b-qr" alt="">
+      <div class="bar-copy">
+        <strong>Ask your own question</strong>
+        <span id="b-url"></span>
+      </div>
+      <div id="q-votes" class="bar-votes"></div>
+    </footer>
+  </main>
+
+  <script src="/app.js"></script>
+  <script src="/screen.js"></script>
+</body>
+</html>

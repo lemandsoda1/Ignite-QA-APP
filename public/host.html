@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Host dashboard</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/fonts/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/NoaGrotesk2.0-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/NoaSerif2.0-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container wide site-header-inner">
+      <img class="brand" src="/brand/noa-ignite-logo.svg" alt="NoA Ignite" width="111" height="24">
+      <span class="site-label">Live Q&amp;A · Host</span>
+    </div>
+  </header>
+
+  <div id="nokey" class="container" hidden>
+    <div class="card notice">
+      <h1>Host link needed</h1>
+      <p id="nokey-text" class="muted"></p>
+      <p class="mt"><a class="btn btn-primary" href="/">Back to start</a></p>
+    </div>
+  </div>
+
+  <div id="dashboard" class="container wide" hidden>
+    <div class="host-head">
+      <div>
+        <p class="eyebrow">Event code <span id="code" class="code-pill"></span></p>
+        <h1 id="event-name">&nbsp;</h1>
+      </div>
+      <span id="status" class="status off">Connecting…</span>
+    </div>
+
+    <p id="reach-banner" class="banner" hidden></p>
+
+    <div class="host-layout">
+      <main>
+        <section id="spotlight" class="card spotlight empty-state"></section>
+
+        <div id="tabs" class="tabs" role="tablist" aria-label="Question lists"></div>
+        <div class="sort-row">
+          <label class="hint" for="sort">Sort by</label>
+          <select id="sort">
+            <option value="popular">Most upvotes</option>
+            <option value="newest">Newest first</option>
+            <option value="oldest">Oldest first</option>
+          </select>
+        </div>
+        <ul id="list" class="qlist"></ul>
+        <p id="empty" class="empty" hidden></p>
+      </main>
+
+      <aside class="sidebar">
+        <section class="card stack">
+          <h2>Join the Q&amp;A</h2>
+          <img id="qr" class="qr" alt="QR code that opens the question page">
+          <p id="join-url" class="join-url"></p>
+          <div class="btn-row">
+            <a id="dl-png" class="btn btn-sm" download>Download PNG</a>
+            <a id="dl-svg" class="btn btn-sm" download>Download SVG</a>
+          </div>
+          <p class="hint">Add the QR image to your slide, or show the big screen below.</p>
+        </section>
+
+        <section class="card stack">
+          <h2>Show &amp; share</h2>
+          <a id="open-screen" class="btn btn-primary" target="_blank" rel="noopener">Open big screen</a>
+          <p class="hint">Share this window in your presentation, or put it on a projector. Press F for fullscreen and D for a dark background.</p>
+          <div class="btn-row">
+            <button id="copy-join" class="btn btn-sm" type="button">Copy join link</button>
+            <button id="copy-host" class="btn btn-sm" type="button">Copy host link</button>
+          </div>
+          <label class="check">
+            <input id="moderated" type="checkbox">
+            <span><strong>Approve questions first</strong><br><span class="muted">New questions wait in "Pending" until you approve them.</span></span>
+          </label>
+          <button id="clear" class="btn btn-sm btn-danger" type="button">Clear all questions</button>
+          <p class="hint">Starts a fresh session. The event and its QR code stay the same.</p>
+        </section>
+      </aside>
+    </div>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="/app.js"></script>
+  <script src="/host.js"></script>
+</body>
+</html>

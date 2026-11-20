@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Live Q&amp;A · NoA Ignite</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/fonts/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/NoaGrotesk2.0-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/NoaSerif2.0-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body class="checking">
+  <noscript><style>body.checking .hero-band, body.checking main { visibility: visible; }</style></noscript>
+  <div class="hero-band">
+    <header class="site-header">
+      <div class="container wide site-header-inner">
+        <img class="brand" src="/brand/noa-ignite-logo.svg" alt="NoA Ignite" width="111" height="24">
+        <span class="site-label">Live Q&amp;A</span>
+      </div>
+    </header>
+    <section class="container wide hero">
+      <h1>Let your audience ask, live.</h1>
+      <p class="lead">Put a QR code on your slide. People scan it, ask and upvote questions, and you decide what goes on the big screen.</p>
+    </section>
+  </div>
+
+  <main class="container wide page">
+    <p id="locked-note" class="lead" hidden>Creating new events is turned off on this site. Use the code of an existing event to join it.</p>
+    <div class="grid-2">
+      <form id="create" class="card stack">
+        <h2>Host an event</h2>
+        <label class="field">Event name
+          <input id="name" type="text" maxlength="80" placeholder="e.g. Quarterly all-hands" required>
+        </label>
+        <label id="password-field" class="field" hidden>Password
+          <input id="password" type="password" autocomplete="current-password" placeholder="Needed to create events">
+        </label>
+        <label class="check">
+          <input id="moderated" type="checkbox">
+          <span><strong>Approve questions first</strong><br><span class="muted">New questions stay hidden until you approve them.</span></span>
+        </label>
+        <button class="btn btn-primary btn-block">Create event</button>
+        <p id="create-error" class="error-text" hidden></p>
+      </form>
+
+      <form id="join" class="card stack">
+        <h2>Join an event</h2>
+        <label class="field">Event code
+          <input id="code" class="code-input" type="text" maxlength="6" placeholder="CODE" autocomplete="off" autocapitalize="characters" required>
+        </label>
+        <button class="btn btn-block">Join</button>
+      </form>
+    </div>
+
+    <section id="mine" class="mine" hidden>
+      <h2>Your events</h2>
+      <div id="mine-list"></div>
+      <p class="hint mt">Saved in this browser only. Use "Copy host link" on a dashboard to open it elsewhere.</p>
+    </section>
+  </main>
+
+  <script src="/app.js"></script>
+  <script src="/home.js"></script>
+</body>
+</html>
